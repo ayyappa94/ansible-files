@@ -29,6 +29,9 @@
 - name: Configure Tomcat users
   template: src=tomcat-users.xml dest=/usr/share/tomcat/conf/
   notify: restart tomcat
+  
+- name: Configure Tomcat webapps manger
+  template: src=context.xml. dest=/usr/share/tomcat/webapps/manager/META-INF
 
 - name: Install Tomcat init script
   copy: src=tomcat-initscript.sh dest=/etc/init.d/tomcat mode=0755
