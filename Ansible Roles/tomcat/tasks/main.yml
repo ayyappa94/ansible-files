@@ -31,7 +31,7 @@
   notify: restart tomcat
   
 - name: Configure Tomcat webapps manger
-  template: src=context.xml. dest=/usr/share/tomcat/webapps/manager/META-INF
+  template: src=context.xml dest=/usr/share/tomcat/webapps/manager/META-INF
   
 - name: Deploy war file to tomcat webapps
   copy: src=nexus.war dest=/usr/share/tomcat/webapps
